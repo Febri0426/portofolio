@@ -1,32 +1,32 @@
 // Typing effect
-const text = "Mahasiswa Teknik Informatika | UI/UX Designer & Frontend Developer";
+const text = "UI/UX Designer & Web Developer";
 let index = 0;
+const el = document.querySelector(".typing");
 
-function typeEffect() {
-  const el = document.querySelector(".typing");
-  if (index < text.length) {
+function typingEffect() {
+  if(index < text.length) {
     el.innerHTML += text.charAt(index);
     index++;
-    setTimeout(typeEffect, 60);
+    setTimeout(typingEffect, 60);
   }
 }
 
-window.addEventListener("load", typeEffect);
+window.addEventListener("load", typingEffect);
 
 // Scroll animation
-const faders = document.querySelectorAll(".fade-slide");
+const fades = document.querySelectorAll(".fade");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting) {
       entry.target.classList.add("show");
     }
   });
 }, {threshold: 0.2});
 
-faders.forEach(f => observer.observe(f));
+fades.forEach(e => observer.observe(e));
 
 // Dark mode
 document.getElementById("darkToggle").addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("dark");
 });
