@@ -2,39 +2,64 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Segoe UI, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: #f5f9ff;
   color: #1f2933;
 }
 
+section {
+  scroll-margin-top: 90px;
+}
+
+/* NAVBAR */
 .navbar {
+  background: #061b33;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #061b33;
   padding: 15px 30px;
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 
-.logo { color: #60a5fa; font-size: 16px; }
+.logo {
+  color: #60a5fa;
+  font-size: 16px;
+}
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 15px;
+  gap: 20px;
 }
 
-.nav-menu a { color: white; text-decoration: none; }
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+}
 
-.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.menu-toggle span { width: 25px; height: 3px; background: white; }
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
 
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+/* HERO */
 .hero {
   background: linear-gradient(135deg, #061b33, #1d4ed8);
   color: white;
@@ -47,8 +72,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .profile {
@@ -59,33 +84,29 @@ body {
   border: 4px solid #93c5fd;
 }
 
-section { padding: 70px 20px; text-align: center; }
+.hero-text { text-align: center; }
 
-.skills, .projects, .certificate-list, .experience-list {
-  display: grid;
-  gap: 15px;
-  max-width: 900px;
-  margin: auto;
+.hero-text span {
+  color: #93c5fd;
 }
 
-/* BUTTON MODERN */
+/* BUTTON */
 .btn-group {
   margin-top: 20px;
   display: flex;
+  justify-content: center;
   gap: 15px;
-  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 14px 28px;
+  padding: 14px 26px;
   background: white;
   color: #1d4ed8;
   font-weight: bold;
-  border-radius: 12px;
   text-decoration: none;
-  border: 2px solid white;
-  transition: 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  transition: .3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .btn.outline {
@@ -96,42 +117,108 @@ section { padding: 70px 20px; text-align: center; }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
 }
 
+/* CONTENT */
+section {
+  padding: 70px 20px;
+  text-align: center;
+}
 
-.skills div, .card, .experience-card, .certificate-card {
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.skills span {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+}
+
+.projects,
+.experience-list,
+.certificate-list {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card,
+.experience-card,
+.certificate-card {
   background: white;
   padding: 20px;
   border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
 
-  .certificate-card img {
+.certificate-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 10px;
-  transition: 0.3s;
+  transition: .3s;
+  cursor: pointer;
 }
 
 .certificate-card img:hover {
   transform: scale(1.05);
 }
 
+/* CONTACT */
+.contact {
+  background: #061b33;
+  color: white;
 }
 
-.contact { background: #061b33; color: white; }
+/* DARK MODE */
+#darkToggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
 
-.fade { opacity: 0; transform: translateY(30px); transition: 0.8s; }
-.fade.show { opacity: 1; transform: translateY(0); }
+.dark {
+  background: #020617;
+  color: white;
+}
 
-.dark { background: #020617; color: white; }
-.dark .navbar, .dark .contact { background: #020617; }
-.dark .card, .dark .skills div, .dark .experience-card, .dark .certificate-card {
+.dark .navbar,
+.dark .contact {
+  background: #020617;
+}
+
+.dark .card,
+.dark .experience-card,
+.dark .certificate-card,
+.dark .skills span {
   background: #071025;
   color: white;
 }
 
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
 @media (max-width:768px) {
   .menu-toggle { display: flex; }
 
@@ -141,8 +228,8 @@ section { padding: 70px 20px; text-align: center; }
     right: 20px;
     background: #061b33;
     flex-direction: column;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 12px;
     display: none;
   }
 

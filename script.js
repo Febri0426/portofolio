@@ -1,4 +1,4 @@
-// Typing Effect
+// Typing effect
 const text = "UI/UX Designer & Web Developer";
 let index = 0;
 const el = document.querySelector(".typing");
@@ -12,17 +12,20 @@ function typingEffect() {
 }
 window.addEventListener("load", typingEffect);
 
-// Scroll Animation
+// Scroll animation
 const faders = document.querySelectorAll(".fade");
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("show");
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
   });
 }, { threshold: 0.2 });
 
 faders.forEach(el => observer.observe(el));
 
-// Dark Mode
+// Dark / Light mode
 const darkToggle = document.getElementById("darkToggle");
 
 darkToggle.addEventListener("click", () => {
@@ -35,14 +38,13 @@ darkToggle.addEventListener("click", () => {
   }
 });
 
-// klik sertifikat
-function openImage(src) {
-  const win = window.open();
-  win.document.write(`<img src="${src}" style="width:100%">`);
-}
-
-
-// Mobile Menu
+// Mobile menu
 document.getElementById("menuToggle").addEventListener("click", () => {
   document.getElementById("navMenu").classList.toggle("show");
 });
+
+// Open certificate image fullscreen
+function openImage(src) {
+  const win = window.open();
+  win.document.write(`<title>Preview</title><img src="${src}" style="width:100%">`);
+}
