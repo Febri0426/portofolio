@@ -1,3 +1,7 @@
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+
 // Typing Effect
 const text = "UI/UX Designer & Web Developer";
 let index = 0;
@@ -28,10 +32,25 @@ faders.forEach(el => observer.observe(el));
 // DARK MODE + ICON TOGGLE
 const darkToggle = document.getElementById("darkToggle");
 
+// Set ikon saat page pertama kali dibuka
+if (document.body.classList.contains("dark")) {
+  darkToggle.textContent = "🌙";
+} else {
+  darkToggle.textContent = "☀️";
+}
+
+// Saat tombol diklik
 darkToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  darkToggle.textContent = document.body.classList.contains("dark") ? "🌙" : "☀️";
+
+  if (document.body.classList.contains("dark")) {
+    darkToggle.textContent = "🌙";
+  } else {
+    darkToggle.textContent = "☀️";
+  }
 });
+
+
 
 // Mobile Menu
 document.getElementById("menuToggle").addEventListener("click", () => {
