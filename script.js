@@ -10,12 +10,10 @@ function typingEffect() {
     setTimeout(typingEffect, 60);
   }
 }
-
 window.addEventListener("load", typingEffect);
 
 // Scroll animation
 const fades = document.querySelectorAll(".fade");
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -31,10 +29,9 @@ document.getElementById("darkToggle").addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-// Mobile Menu
+// Mobile menu
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
-
 menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("show");
 });
