@@ -50,8 +50,6 @@ darkToggle.addEventListener("click", () => {
   }
 });
 
-
-
 // Mobile Menu
 document.getElementById("menuToggle").addEventListener("click", () => {
   document.getElementById("navMenu").classList.toggle("show");
