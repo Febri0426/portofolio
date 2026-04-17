@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Febriani Amalia Nurhasanah</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,15 +14,24 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">PORTOFOLIO</div>
-      <ul class="nav-menu">
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#proyek">Proyek</a></li>
-        <li><a href="#pengalaman">Pengalaman</a></li>
-        <li><a href="#sertifikat">Sertifikat</a></li>
-        <li><a href="#kontak">Kontak</a></li>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#tentang" class="nav-link">Tentang</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#proyek" class="nav-link">Proyek</a></li>
+        <li><a href="#pengalaman" class="nav-link">Pengalaman</a></li>
+        <li><a href="#sertifikat" class="nav-link">Sertifikat</a></li>
+        <li><a href="#kontak" class="nav-link">Kontak</a></li>
       </ul>
-      <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
+      <div class="nav-actions">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
+          <i class="fas fa-sun" id="themeIcon"></i>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -30,15 +40,23 @@
     <div class="hero-container">
       <div class="hero-image">
         <img src="foto.jpeg" alt="Febriani Amalia Nurhasanah">
+        <div class="hero-image-border"></div>
       </div>
       <div class="hero-content">
         <h1>Halo, Saya <span class="highlight">Febriani Amalia</span></h1>
         <p class="subtitle">UI/UX Designer</p>
         <div class="hero-buttons">
-          <a href="#proyek" class="btn btn-primary">Lihat Portofolio</a>
-          <a href="cv1.jpg" download class="btn btn-outline">Download CV</a>
+          <a href="#proyek" class="btn btn-primary">
+            <i class="fas fa-eye"></i> Lihat Portofolio
+          </a>
+          <a href="cv1.jpg" download class="btn btn-outline">
+            <i class="fas fa-download"></i> Download CV
+          </a>
         </div>
       </div>
+    </div>
+    <div class="scroll-indicator" onclick="scrollToSection('tentang')">
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
@@ -58,18 +76,78 @@ Memiliki IPK kumulatif 3,63, saya dikenal sebagai pribadi yang disiplin, bertang
     <div class="container">
       <h2 class="section-title">Keahlian</h2>
       <div class="skills-grid">
-        <div class="skill-item">Figma</div>
-        <div class="skill-item">VS Code</div>
-        <div class="skill-item">Prototyping</div>
-        <div class="skill-item">Canva</div>
-        <div class="skill-item">HTML</div>
-        <div class="skill-item">CSS</div>
-        <div class="skill-item">PHP</div>
-        <div class="skill-item">Java</div>
-        <div class="skill-item">Microsoft Office</div>
-        <div class="skill-item">Trello</div>
-        <div class="skill-item">Laravel</div>
-        <div class="skill-item">MySQL</div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-figma"></i>
+          </div>
+          <span>Figma</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <span>VS Code</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <span>Prototyping</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <span>Canva</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <span>HTML</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <span>CSS</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-php"></i>
+          </div>
+          <span>PHP</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-java"></i>
+          </div>
+          <span>Java</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-file-word"></i>
+          </div>
+          <span>Microsoft Office</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-trello"></i>
+          </div>
+          <span>Trello</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-laravel"></i>
+          </div>
+          <span>Laravel</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <span>MySQL</span>
+        </div>
       </div>
     </div>
   </section>
@@ -80,18 +158,30 @@ Memiliki IPK kumulatif 3,63, saya dikenal sebagai pribadi yang disiplin, bertang
       <h2 class="section-title">Proyek</h2>
       <div class="projects-grid">
         <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-tshirt"></i>
+          </div>
           <h3>UI/UX Designer | Aplikasi Laundry Family (Project Based Learning)</h3>
           <p>Bertanggung jawab dalam merancang tampilan dan pengalaman pengguna pada aplikasi Laundry Family.</p>
         </div>
         <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-store"></i>
+          </div>
           <h3>UI/UX Designer | Aplikasi E-Konter (Project Based Learning)</h3>
           <p>Bertanggung jawab dalam merancang tampilan dan pengalaman pengguna pada aplikasi E-Konter.</p>
         </div>
         <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-vial"></i>
+          </div>
           <h3>Tester | Aplikasi SI-KUNIR (Project Based Learning)</h3>
           <p>Melakukan pengujian fitur aplikasi untuk memastikan fungsi berjalan dengan baik, menemukan bug, serta membantu meningkatkan kualitas dan kinerja aplikasi.</p>
         </div>
         <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
           <h3>UI/UX Designer | Aplikasi posCare (Project Based Learning)</h3>
           <p>Bertanggung jawab dalam merancang tampilan dan pengalaman pengguna pada aplikasi posCare.</p>
         </div>
@@ -100,19 +190,28 @@ Memiliki IPK kumulatif 3,63, saya dikenal sebagai pribadi yang disiplin, bertang
   </section>
 
   <!-- PENGALAMAN SECTION -->
-  <section class="section" id="pengalaman">
+  <section class="section" id="organisasi">
     <div class="container">
       <h2 class="section-title">Pengalaman</h2>
       <div class="experience-grid">
         <div class="experience-card">
+          <div class="experience-icon">
+            <i class="fas fa-medal"></i>
+          </div>
           <h3>Koordinator Departemen Olahraga & Kesehatan</h3>
           <p>OPPM Al-Islam Nganjuk</p>
         </div>
         <div class="experience-card">
+          <div class="experience-icon">
+            <i class="fas fa-users"></i>
+          </div>
           <h3>Koordinator Gerakan Pramuka Brajamukti Al Islam Nganjuk</h3>
           <p>KA Gudep Penggalang</p>
         </div>
         <div class="experience-card">
+          <div class="experience-icon">
+            <i class="fas fa-building"></i>
+          </div>
           <h3>HMJ TI Politeknik Negeri Jember</h3>
           <p>Biro Internal Nganjuk</p>
         </div>
@@ -154,16 +253,30 @@ Memiliki IPK kumulatif 3,63, saya dikenal sebagai pribadi yang disiplin, bertang
     <div class="container">
       <h2 class="section-title">Kontak</h2>
       <div class="contact-info">
-        <p>Email: <a href="mailto:febriamalianurhasanah0426@gmail.com">febriamalianurhasanah0426@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/Febri0426" target="_blank">github.com/Febri0426</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/febriani-amalia-nurhasanah-165385325" target="_blank">linkedin.com/in/Febriani-Amalia</a></p>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <p>Email: <a href="mailto:febriamalianurhasanah0426@gmail.com">febriamalianurhasanah0426@gmail.com</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <p>GitHub: <a href="https://github.com/Febri0426" target="_blank">github.com/Febri0426</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/febriani-amalia-nurhasanah-165385325" target="_blank">linkedin.com/in/Febriani-Amalia</a></p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2024 Febriani Amalia Nurhasanah. All Rights Reserved.</p>
+  </footer>
+
   <!-- MODAL -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <span class="close" onclick="closeModal(event)">&times;</span>
     <img id="modal-img" class="modal-content">
   </div>
 
