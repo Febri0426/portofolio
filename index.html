@@ -36,30 +36,44 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <div class="hero-container">
-      <div class="hero-image">
-        <img src="foto.jpeg" alt="Febriani Amalia Nurhasanah">
-        <div class="hero-image-border"></div>
+<section class="hero" id="home">
+  <div class="hero-container">
+    
+    <!-- BAGIAN GAMBAR -->
+    <div class="hero-image">
+      <div class="image-placeholder">
+        <i class="fas fa-user-circle"></i>
       </div>
-      <div class="hero-content">
-        <h1>Halo, Saya <span class="highlight">Febriani Amalia</span></h1>
-        <p class="subtitle">UI/UX Designer</p>
-        <div class="hero-buttons">
-          <a href="#proyek" class="btn btn-primary">
-            <i class="fas fa-eye"></i> Lihat Portofolio
-          </a>
-          <a href="cv1.jpg" download class="btn btn-outline">
-            <i class="fas fa-download"></i> Download CV
-          </a>
-        </div>
-      </div>
+      <img src="foto.jpeg" 
+           alt="Febriani Amalia Nurhasanah" 
+           class="hero-image-img"
+           onload="this.classList.add('loaded')"
+           onerror="this.onerror=null; this.parentElement.classList.add('error'); this.style.display='none'">
+      <div class="hero-image-border"></div>
     </div>
-    <div class="scroll-indicator" onclick="scrollToSection('tentang')">
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </section>
+    <!-- SELESAI BAGIAN GAMBAR -->
 
+    <!-- BAGIAN TEKS -->
+    <div class="hero-content">
+      <h1>Halo, Saya <span class="highlight">Febriani Amalia</span></h1>
+      <p class="subtitle">UI/UX Designer</p>
+      <div class="hero-buttons">
+        <a href="#proyek" class="btn btn-primary">
+          <i class="fas fa-eye"></i> Lihat Portofolio
+        </a>
+        <a href="cv1.jpg" download class="btn btn-outline">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+      </div>
+    </div>
+    <!-- SELESAI BAGIAN TEKS -->
+
+  </div>
+
+  <div class="scroll-indicator" onclick="scrollToSection('tentang')">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
   <!-- TENTANG SECTION -->
   <section class="section" id="tentang">
     <div class="container">
