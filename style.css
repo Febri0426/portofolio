@@ -20,9 +20,9 @@ body.light-mode {
   --bg-primary: #f0f4f8;
   --bg-secondary: #ffffff;
   --bg-card: #e2e8f0;
-  --text-primary: #1a202c;
-  --text-secondary: #4a5568;
-  --gradient-start: #dbeafe;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --gradient-start: #93c5fd;
   --gradient-end: #3b82f6;
 }
 
@@ -359,7 +359,7 @@ body {
 /* SECTIONS */
 .section {
   padding: 6rem 2rem;
-  scroll-margin-top: 80px; /* Fix scroll offset */
+  scroll-margin-top: 80px;
 }
 
 .container {
@@ -613,7 +613,6 @@ body {
     gap: 2rem;
   }
 
-  /* Updated for new image structure */
   .hero-image {
     width: 220px;
     height: 220px;
@@ -651,7 +650,6 @@ body {
     padding: 7rem 1rem 3rem;
   }
 
-  /* Updated for new image structure */
   .hero-image {
     width: 180px;
     height: 180px;
@@ -747,31 +745,64 @@ body {
   .certificate-card:active {
     transform: scale(0.98);
   }
+}
 
-  /* PERBAIKAN TEMA TERANG */
-body.light-mode .section-description {
-  color: #4a5568;
+/* ====== FIX LIGHT MODE ====== */
+body.light-mode .hero-content h1 {
+  color: #0f172a;
+}
+
+body.light-mode .hero-content .highlight {
+  color: #2563eb;
+}
+
+body.light-mode .subtitle {
+  color: #334155;
 }
 
 body.light-mode .section-title {
-  color: #1a202c;
+  color: #0f172a;
+}
+
+body.light-mode .section-description {
+  color: #334155;
 }
 
 body.light-mode .skill-item {
-  background: #e2e8f0;
+  background: #e0e7ff;
+  color: #1e293b;
+}
+
+body.light-mode .skill-icon {
+  color: #3b82f6;
 }
 
 body.light-mode .project-card,
 body.light-mode .experience-card {
-  background: #e2e8f0;
+  background: #e0e7ff;
+  color: #1e293b;
 }
 
 body.light-mode .project-card p,
 body.light-mode .experience-card p {
-  color: #4a5568;
+  color: #475569;
 }
 
 body.light-mode .certificate-card {
-  background: #e2e8f0;
+  background: #e0e7ff;
+  color: #1e293b;
 }
+
+body.light-mode .contact {
+  background: #f8fafc;
+}
+
+body.light-mode .btn-outline {
+  color: #2563eb;
+  border-color: #2563eb;
+}
+
+body.light-mode .btn-outline:hover {
+  background: #2563eb;
+  color: white;
 }
