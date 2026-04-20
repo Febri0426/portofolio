@@ -274,17 +274,17 @@ const projectsData = [
     title: "UI/UX Designer | Aplikasi Laundry Family",
     role: "UI/UX Designer - Project Based Learning",
     date: "2024",
-    team: "Individual Project",
+    team: "Group Project",
     description: "Aplikasi Laundry Family adalah platform digital untuk memudahkan pelanggan dalam memesan layanan laundry. Proyek ini dirancang dengan fokus pada kemudahan penggunaan dan pengalaman pengguna yang optimal.",
     responsibilities: [
       "Melakukan riset pengguna untuk memahami kebutuhan target audience",
       "Membuat wireframe dan user flow aplikasi",
-      "Merancang UI/UX yang modern dan user-friendly menggunakan Figma",
-      "Membuat prototype interaktif untuk testing",
+      "Merancang visual interface & mockup menggunakan Canva", 
+      "Menyusun prototype interaktif untuk presentasi & testing",
       "Melakukan usability testing dan iterasi desain"
-    ],
-    technologies: ["Figma", "UI Design", "Prototyping", "User Research", "Wireframing"],
-    images: ["proyek1-screen1.jpg", "proyek1-screen2.jpg", "proyek1-screen3.jpg"],
+],
+    technologies: ["Canva", "UI/UX Basics", "Wireframing", "User Research", "Presentation Design"],
+    images: ["proyek1-screen1.jpg", "proyek1-screen2.jpg", "proyek1-screen3.jpg", "proyek1-screen4.jpg"],
     liveLink: "#",
     githubLink: "#"
   },
