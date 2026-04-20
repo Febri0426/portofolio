@@ -268,4 +268,190 @@ style.textContent = `
     }
   }
 `;
-document.head.appendChild(style);
+/* ===== PROJECT MODAL DATA & FUNCTIONS ===== */
+const projectsData = [
+  {
+    title: "UI/UX Designer | Aplikasi Laundry Family",
+    role: "UI/UX Designer - Project Based Learning",
+    date: "2024",
+    team: "Individual Project",
+    description: "Aplikasi Laundry Family adalah platform digital untuk memudahkan pelanggan dalam memesan layanan laundry. Proyek ini dirancang dengan fokus pada kemudahan penggunaan dan pengalaman pengguna yang optimal.",
+    responsibilities: [
+      "Melakukan riset pengguna untuk memahami kebutuhan target audience",
+      "Membuat wireframe dan user flow aplikasi",
+      "Merancang UI/UX yang modern dan user-friendly menggunakan Figma",
+      "Membuat prototype interaktif untuk testing",
+      "Melakukan usability testing dan iterasi desain"
+    ],
+    technologies: ["Figma", "UI Design", "Prototyping", "User Research", "Wireframing"],
+    images: ["proyek1-screen1.jpg", "proyek1-screen2.jpg", "proyek1-screen3.jpg"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "UI/UX Designer | Aplikasi E-Konter",
+    role: "UI/UX Designer - Project Based Learning",
+    date: "2024",
+    team: "Individual Project",
+    description: "Aplikasi E-Konter adalah solusi digital untuk manajemen konter pulsa dan pembayaran. Dirancang untuk memudahkan transaksi dan pengelolaan bisnis konter.",
+    responsibilities: [
+      "Analisis kebutuhan bisnis dan user",
+      "Desain interface yang clean dan profesional",
+      "Pembuatan design system untuk konsistensi",
+      "Prototyping fitur-fitur utama",
+      "Kolaborasi dengan developer untuk implementasi"
+    ],
+    technologies: ["Figma", "Wireframing", "User Research", "Design System"],
+    images: ["proyek2-screen1.jpg", "proyek2-screen2.jpg", "proyek2-screen3.jpg"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "Tester | Aplikasi SI-KUNIR",
+    role: "Quality Assurance Tester - Project Based Learning",
+    date: "2024",
+    team: "Team Project",
+    description: "SI-KUNIR adalah aplikasi sistem informasi yang memerlukan pengujian menyeluruh untuk memastikan kualitas dan kinerja yang optimal sebelum dirilis.",
+    responsibilities: [
+      "Membuat test plan dan test case",
+      "Melakukan functional testing",
+      "Menemukan dan mendokumentasikan bug",
+      "Melakukan regression testing",
+      "Bekerjasama dengan developer untuk perbaikan bug",
+      "Melakukan user acceptance testing (UAT)"
+    ],
+    technologies: ["Manual Testing", "Bug Tracking", "Test Case", "QA"],
+    images: ["proyek3-screen1.jpg", "proyek3-screen2.jpg"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "UI/UX Designer | Aplikasi posCare",
+    role: "UI/UX Designer - Project Based Learning",
+    date: "2024",
+    team: "Individual Project",
+    description: "posCare adalah aplikasi healthcare yang dirancang untuk memudahkan pasien dalam mengakses layanan kesehatan. Fokus pada kemudahan akses dan kenyamanan pengguna.",
+    responsibilities: [
+      "Riset tentang kebutuhan aplikasi healthcare",
+      "Desain user interface yang calming dan trustworthy",
+      "Pembuatan user journey untuk berbagai skenario",
+      "Desain fitur booking janji temu dokter",
+      "Testing dan validasi desain"
+    ],
+    technologies: ["Figma", "Mobile Design", "Healthcare UI", "Prototyping"],
+    images: ["proyek4-screen1.jpg", "proyek4-screen2.jpg", "proyek4-screen3.jpg"],
+    liveLink: "#",
+    githubLink: "#"
+  }
+];
+
+let currentImageIndex = 0;
+
+function openProjectModal(projectIndex) {
+  const modal = document.getElementById('projectModal');
+  const project = projectsData[projectIndex];
+  
+  document.getElementById('projectTitle').textContent = project.title;
+  document.getElementById('projectRole').textContent = project.role;
+  document.getElementById('projectDate').textContent = project.date;
+  document.getElementById('projectTeam').textContent = project.team;
+  document.getElementById('projectDesc').textContent = project.description;
+  
+  const responsibilitiesList = document.getElementById('projectResponsibilities');
+  responsibilitiesList.innerHTML = project.responsibilities.map(resp => `<li>${resp}</li>`).join('');
+  
+  const techStack = document.getElementById('projectTech');
+  techStack.innerHTML = project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('');
+  
+  const imagesContainer = document.getElementById('projectImages');
+  imagesContainer.innerHTML = '';
+  
+  if (project.images && project.images.length > 0) {
+    project.images.forEach((img, index) => {
+      const imgElement = document.createElement('img');
+      imgElement.src = img;
+      imgElement.alt = `Screenshot ${index + 1}`;
+      imgElement.className = `project-image-slide ${index === 0 ? 'active' : ''}`;
+      imagesContainer.appendChild(imgElement);
+    });
+    
+    imagesContainer.innerHTML += `
+      <button class="project-image-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+      <button class="project-image-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+      <div class="project-image-dots">
+        ${project.images.map((_, index) => `<span class="dot ${index === 0 ? 'active' : ''}" onclick="goToImage(${index})"></span>`).join('')}
+      </div>
+    `;
+    currentImageIndex = 0;
+  } else {
+    imagesContainer.innerHTML = '<p class="text-center py-8" style="color: var(--text-secondary)">No screenshots available</p>';
+  }
+  
+  const liveLink = document.getElementById('projectLive');
+  const githubLink = document.getElementById('projectGithub');
+  
+  if (project.liveLink && project.liveLink !== '#') {
+    liveLink.href = project.liveLink;
+    liveLink.style.display = 'inline-flex';
+  } else {
+    liveLink.style.display = 'none';
+  }
+  
+  if (project.githubLink && project.githubLink !== '#') {
+    githubLink.href = project.githubLink;
+    githubLink.style.display = 'inline-flex';
+  } else {
+    githubLink.style.display = 'none';
+  }
+  
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal(event) {
+  if (!event || event.target.id === 'projectModal' || event.target.classList.contains('modal-close')) {
+    const modal = document.getElementById('projectModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+}
+
+function changeImage(direction) {
+  const slides = document.querySelectorAll('.project-image-slide');
+  const dots = document.querySelectorAll('.dot');
+  if (slides.length === 0) return;
+  
+  slides[currentImageIndex].classList.remove('active');
+  dots[currentImageIndex].classList.remove('active');
+  
+  currentImageIndex = (currentImageIndex + direction + slides.length) % slides.length;
+  
+  slides[currentImageIndex].classList.add('active');
+  dots[currentImageIndex].classList.add('active');
+}
+
+function goToImage(index) {
+  const slides = document.querySelectorAll('.project-image-slide');
+  const dots = document.querySelectorAll('.dot');
+  if (slides.length === 0) return;
+  
+  slides[currentImageIndex].classList.remove('active');
+  dots[currentImageIndex].classList.remove('active');
+  
+  currentImageIndex = index;
+  
+  slides[currentImageIndex].classList.add('active');
+  dots[currentImageIndex].classList.add('active');
+}
+
+// Update keyboard handler to include project modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const projectModal = document.getElementById('projectModal');
+    if (projectModal.classList.contains('active')) closeProjectModal();
+    const modal = document.getElementById('modal');
+    if (modal.style.display === 'block') closeModal();
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu.classList.contains('active')) toggleMobileMenu();
+  }
+});

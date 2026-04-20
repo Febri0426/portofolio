@@ -74,6 +74,7 @@
     <i class="fas fa-chevron-down"></i>
   </div>
 </section>
+
   <!-- TENTANG SECTION -->
   <section class="section" id="tentang">
     <div class="container">
@@ -166,38 +167,65 @@ Memiliki IPK kumulatif 3,63, saya dikenal sebagai pribadi yang disiplin, bertang
     </div>
   </section>
 
-  <!-- PROYEK SECTION -->
+  <!-- PROYEK SECTION (UPDATED) -->
   <section class="section" id="proyek">
     <div class="container">
       <h2 class="section-title">Proyek</h2>
       <div class="projects-grid">
-        <div class="project-card">
+        <div class="project-card" onclick="openProjectModal(0)">
           <div class="project-icon">
             <i class="fas fa-tshirt"></i>
           </div>
           <h3>UI/UX Designer | Aplikasi Laundry Family (Project Based Learning)</h3>
           <p>Bertanggung jawab dalam merancang tampilan dan pengalaman pengguna pada aplikasi Laundry Family.</p>
+          <div class="project-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">UI Design</span>
+            <span class="tag">Prototyping</span>
+          </div>
+          <button class="btn-view">Lihat Detail <i class="fas fa-arrow-right"></i></button>
         </div>
-        <div class="project-card">
+
+        <div class="project-card" onclick="openProjectModal(1)">
           <div class="project-icon">
             <i class="fas fa-store"></i>
           </div>
           <h3>UI/UX Designer | Aplikasi E-Konter (Project Based Learning)</h3>
           <p>Bertanggung jawab dalam merancang tampilan dan pengalaman pengguna pada aplikasi E-Konter.</p>
+          <div class="project-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Wireframing</span>
+            <span class="tag">User Research</span>
+          </div>
+          <button class="btn-view">Lihat Detail <i class="fas fa-arrow-right"></i></button>
         </div>
-        <div class="project-card">
+
+        <div class="project-card" onclick="openProjectModal(2)">
           <div class="project-icon">
             <i class="fas fa-vial"></i>
           </div>
           <h3>Tester | Aplikasi SI-KUNIR (Project Based Learning)</h3>
           <p>Melakukan pengujian fitur aplikasi untuk memastikan fungsi berjalan dengan baik, menemukan bug, serta membantu meningkatkan kualitas dan kinerja aplikasi.</p>
+          <div class="project-tags">
+            <span class="tag">Testing</span>
+            <span class="tag">QA</span>
+            <span class="tag">Bug Tracking</span>
+          </div>
+          <button class="btn-view">Lihat Detail <i class="fas fa-arrow-right"></i></button>
         </div>
-        <div class="project-card">
+
+        <div class="project-card" onclick="openProjectModal(3)">
           <div class="project-icon">
             <i class="fas fa-heartbeat"></i>
           </div>
           <h3>UI/UX Designer | Aplikasi posCare (Project Based Learning)</h3>
           <p>Bertanggung jawab dalam merancang tampilan dan pengalaman pengguna pada aplikasi posCare.</p>
+          <div class="project-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Mobile Design</span>
+            <span class="tag">Healthcare</span>
+          </div>
+          <button class="btn-view">Lihat Detail <i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -296,10 +324,67 @@ Memiliki IPK kumulatif 3,63, saya dikenal sebagai pribadi yang disiplin, bertang
     <p>&copy; 2024 Febriani Amalia Nurhasanah. All Rights Reserved.</p>
   </footer>
 
-  <!-- MODAL -->
+  <!-- MODAL SERTIFIKAT (EXISTING) -->
   <div id="modal" class="modal" onclick="closeModal(event)">
     <span class="close" onclick="closeModal(event)">&times;</span>
     <img id="modal-img" class="modal-content">
+  </div>
+
+  <!-- PROJECT DETAIL MODAL (NEW) -->
+  <div id="projectModal" class="modal project-modal" onclick="closeProjectModal(event)">
+    <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+      
+      <div class="modal-body">
+        <div class="project-images" id="projectImages">
+          <!-- Images will be inserted here by JavaScript -->
+        </div>
+
+        <div class="project-info">
+          <h2 id="projectTitle">Project Title</h2>
+          <p class="project-role" id="projectRole">Role</p>
+          
+          <div class="project-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span id="projectDate">2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-users"></i>
+              <span id="projectTeam">Individual Project</span>
+            </div>
+          </div>
+
+          <div class="project-description">
+            <h3>Tentang Proyek</h3>
+            <p id="projectDesc">Description</p>
+          </div>
+
+          <div class="project-responsibilities">
+            <h3>Tanggung Jawab</h3>
+            <ul id="projectResponsibilities">
+              <!-- List items will be inserted here -->
+            </ul>
+          </div>
+
+          <div class="project-tech">
+            <h3>Teknologi & Tools</h3>
+            <div class="tech-stack" id="projectTech">
+              <!-- Tech tags will be inserted here -->
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="#" class="btn-live" id="projectLive" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Lihat Project
+            </a>
+            <a href="#" class="btn-github" id="projectGithub" target="_blank">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
