@@ -274,10 +274,10 @@ const projectsData = [
     title: "UI/UX Designer | Aplikasi Laundry Family",
     role: "UI/UX Designer - Project Based Learning",
     date: "2024",
-    team: "Group Project",
-    description: "Aplikasi Laundry Family adalah platform digital untuk memudahkan pelanggan dalam memesan layanan laundry. Proyek ini dirancang dengan fokus pada kemudahan penggunaan dan pengalaman pengguna yang optimal.",
+    team: "Team Project",
+    description: "Aplikasi Laundry Family adalah platform digital untuk memudahkan pengguna dalam mencatat data laundry. Proyek ini dirancang dengan fokus pada kemudahan penggunaan dan pengalaman pengguna yang optimal.",
     responsibilities: [
-      "Melakukan riset pengguna untuk memahami kebutuhan target audience",
+      "Melakukan riset pengguna untuk memahami kebutuhan",
       "Membuat wireframe dan user flow aplikasi",
       "Merancang visual interface & mockup menggunakan Canva", 
       "Menyusun prototype interaktif untuk presentasi & testing",
@@ -292,8 +292,8 @@ const projectsData = [
     title: "UI/UX Designer | Aplikasi E-Konter",
     role: "UI/UX Designer - Project Based Learning",
     date: "2024",
-    team: "Individual Project",
-    description: "Aplikasi E-Konter adalah solusi digital untuk manajemen konter pulsa dan pembayaran. Dirancang untuk memudahkan transaksi dan pengelolaan bisnis konter.",
+    team: "Team Project",
+    description: "Aplikasi E-Konter adalah solusi digital untuk manajemen konter pulsa dan pembayaran. Dirancang untuk memudahkan pengguna dalam mencatat laporan pemasukan dan pengeluaran.",
     responsibilities: [
       "Analisis kebutuhan bisnis dan user",
       "Desain interface yang clean dan profesional",
@@ -302,7 +302,7 @@ const projectsData = [
       "Kolaborasi dengan developer untuk implementasi"
     ],
     technologies: ["Figma", "Wireframing", "User Research", "Design System"],
-    images: ["proyek2-screen1.jpg", "proyek2-screen2.jpg", "proyek2-screen3.jpg"],
+    images: ["proyek2-screen1.jpg", "proyek2-screen2.jpg", "proyek2-screen3.jpg", "proyek2-screen4.jpg", "proyek2-screen5.jpg", "proyek2-screen6.jpg", "proyek2-screen7.jpg", "proyek2-screen8.jpg", "proyek2-screen9.jpg", "proyek2-screen10.jpg"],
     liveLink: "#",
     githubLink: "#"
   },
@@ -321,7 +321,7 @@ const projectsData = [
       "Melakukan user acceptance testing (UAT)"
     ],
     technologies: ["Manual Testing", "Bug Tracking", "Test Case", "QA"],
-    images: ["proyek3-screen1.jpg", "proyek3-screen2.jpg"],
+    images: ["proyek3-screen1.jpg", "proyek3-screen2.jpg", "proyek3-screen3.jpg"],
     liveLink: "#",
     githubLink: "#"
   },
@@ -329,13 +329,12 @@ const projectsData = [
     title: "UI/UX Designer | Aplikasi posCare",
     role: "UI/UX Designer - Project Based Learning",
     date: "2024",
-    team: "Individual Project",
-    description: "posCare adalah aplikasi healthcare yang dirancang untuk memudahkan pasien dalam mengakses layanan kesehatan. Fokus pada kemudahan akses dan kenyamanan pengguna.",
+    team: "Team Project",
+    description: "posCare adalah aplikasi posyandu yang dirancang untuk memudahkan kader dalam mencatat data balita dan lansia, selain itu juga untuk memudahkan orang tua yang memiliki balita dalam memantau perkembangan balita. Fokus pada kemudahan akses dan kenyamanan pengguna.",
     responsibilities: [
-      "Riset tentang kebutuhan aplikasi healthcare",
+      "Riset tentang kebutuhan aplikasi posyandu",
       "Desain user interface yang calming dan trustworthy",
       "Pembuatan user journey untuk berbagai skenario",
-      "Desain fitur booking janji temu dokter",
       "Testing dan validasi desain"
     ],
     technologies: ["Figma", "Mobile Design", "Healthcare UI", "Prototyping"],
