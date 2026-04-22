@@ -291,7 +291,7 @@ const projectsData = [
   {
     title: "UI/UX Designer | Aplikasi E-Konter",
     role: "UI/UX Designer - Project Based Learning",
-    date: "2024",
+    date: "2025",
     team: "Team Project",
     description: "Aplikasi E-Konter adalah solusi digital untuk manajemen konter pulsa dan pembayaran. Dirancang untuk memudahkan pengguna dalam mencatat laporan pemasukan dan pengeluaran.",
     responsibilities: [
@@ -309,7 +309,7 @@ const projectsData = [
   {
     title: "Tester | Aplikasi SI-KUNIR",
     role: "Quality Assurance Tester - Project Based Learning",
-    date: "2024",
+    date: "2025",
     team: "Team Project",
     description: "SI-KUNIR adalah aplikasi sistem informasi yang memerlukan pengujian menyeluruh untuk memastikan kualitas dan kinerja yang optimal sebelum dirilis.",
     responsibilities: [
@@ -328,7 +328,7 @@ const projectsData = [
   {
     title: "UI/UX Designer | Aplikasi posCare",
     role: "UI/UX Designer - Project Based Learning",
-    date: "2024",
+    date: "2025",
     team: "Team Project",
     description: "posCare adalah aplikasi posyandu yang dirancang untuk memudahkan kader dalam mencatat data balita dan lansia, selain itu juga untuk memudahkan orang tua yang memiliki balita dalam memantau perkembangan balita. Fokus pada kemudahan akses dan kenyamanan pengguna.",
     responsibilities: [
@@ -338,7 +338,7 @@ const projectsData = [
       "Testing dan validasi desain"
     ],
     technologies: ["Figma", "Mobile Design", "Healthcare UI", "Prototyping"],
-    images: ["proyek4-screen1.jpg", "proyek4-screen2.jpg", "proyek4-screen3.jpg"],
+    images: ["proyek4-screen1.jpg", "proyek4-screen2.jpg", "proyek4-screen3.jpg", "proyek4-screen4.jpg", "proyek4-screen5.jpg", "proyek4-screen6.jpg", "proyek4-screen7.jpg", "proyek4-screen8.jpg", "proyek4-screen9.jpg", "proyek4-screen10.jpg", "proyek4-screen11.jpg", "proyek4-screen12.jpg", "proyek4-screen13.jpg", "proyek4-screen14.jpg"],
     liveLink: "#",
     githubLink: "#"
   }
