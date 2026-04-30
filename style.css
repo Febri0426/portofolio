@@ -377,6 +377,86 @@ body {
   line-height: 1.8;
 }
 
+/* ===== EDUCATION SECTION ===== */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.education-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  transition: all 0.3s;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.education-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: white;
+}
+
+.education-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.education-institution {
+  font-weight: 600;
+  color: var(--accent-light);
+  margin-bottom: 0.5rem;
+}
+
+.education-period {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Responsive untuk Education */
+@media (max-width: 640px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .education-card {
+    flex-direction: column;
+  }
+}
+
+/* Light mode untuk Education */
+body.light-mode .education-card {
+  background: #e0e7ff;
+}
+
+body.light-mode .education-card h3 {
+  color: #1e293b;
+}
+
 /* SKILLS */
 .skills-grid {
   display: grid;
