@@ -1733,3 +1733,139 @@ body::before {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+/* ====== STAR BACKGROUND EFFECT ====== */
+
+/* Container untuk bintang */
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Bintang individual */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration) ease-in-out infinite;
+  opacity: var(--opacity);
+}
+
+/* Animasi kelap-kelip */
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: var(--opacity); 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: calc(var(--opacity) * 0.3); 
+    transform: scale(0.8); 
+  }
+}
+
+/* Shooting Stars (Bintang Jatuh) */
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,1), transparent);
+  border-radius: 50%;
+  animation: shoot 3s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes shoot {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(100px) rotate(-45deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100vw) translateY(-100px) rotate(-45deg);
+  }
+}
+
+/* Constellation Lines (Garis Penghubung Bintang) */
+.constellation-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+  transform-origin: left center;
+  pointer-events: none;
+  animation: lineFade 4s ease-in-out infinite;
+}
+
+@keyframes lineFade {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.5; }
+}
+
+/* Star Glow Effect */
+.star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: starGlow 3s ease-in-out infinite;
+}
+
+@keyframes starGlow {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.8; }
+}
+
+/* Different Star Sizes */
+.star-small {
+  width: 2px;
+  height: 2px;
+}
+
+.star-medium {
+  width: 3px;
+  height: 3px;
+}
+
+.star-large {
+  width: 4px;
+  height: 4px;
+}
+
+/* Apply to Hero Section */
+.hero {
+  position: relative;
+}
+
+/* Star Background untuk Section Lainnya (Opsional) */
+.section-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Responsive - Kurangi bintang di mobile */
+@media (max-width: 768px) {
+  .star {
+    display: none;
+  }
+  .star:nth-child(-n+30) {
+    display: block;
+  }
+}

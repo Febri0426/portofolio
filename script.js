@@ -300,3 +300,82 @@ window.addEventListener('scroll', () => {
   const scrolled = (window.scrollY / windowHeight) * 100;
   document.documentElement.style.setProperty('--scroll-progress', `${scrolled}%`);
 });
+
+/* ====== STAR BACKGROUND GENERATOR ====== */
+
+function createStars() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  
+  // Create stars container
+  const starsContainer = document.createElement('div');
+  starsContainer.className = 'stars-container';
+  
+  // Generate 100 stars
+  const numberOfStars = 100;
+  
+  for (let i = 0; i < numberOfStars; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    
+    // Random size
+    const sizeClass = ['star-small', 'star-medium', 'star-large'][Math.floor(Math.random() * 3)];
+    star.classList.add(sizeClass);
+    
+    // Random position
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
+    
+    // Random animation duration
+    star.style.setProperty('--duration', `${2 + Math.random() * 3}s`);
+    
+    // Random opacity
+    star.style.setProperty('--opacity', `${0.3 + Math.random() * 0.7}`);
+    
+    // Random delay
+    star.style.animationDelay = `${Math.random() * 3}s`;
+    
+    starsContainer.appendChild(star);
+  }
+  
+  // Add shooting stars (3 shooting stars)
+  for (let i = 0; i < 3; i++) {
+    const shootingStar = document.createElement('div');
+    shootingStar.className = 'shooting-star';
+    shootingStar.style.top = `${Math.random() * 50}%`;
+    shootingStar.style.left = `${Math.random() * 50}%`;
+    shootingStar.style.animationDelay = `${5 + Math.random() * 10}s`;
+    starsContainer.appendChild(shootingStar);
+  }
+  
+  // Add constellation lines (optional - connects some stars)
+  for (let i = 0; i < 5; i++) {
+    const line = document.createElement('div');
+    line.className = 'constellation-line';
+    line.style.width = `${100 + Math.random() * 200}px`;
+    line.style.left = `${Math.random() * 80}%`;
+    line.style.top = `${Math.random() * 80}%`;
+    line.style.transform = `rotate(${Math.random() * 360}deg)`;
+    line.style.animationDelay = `${Math.random() * 4}s`;
+    starsContainer.appendChild(line);
+  }
+  
+  hero.appendChild(starsContainer);
+}
+
+// Call function when page loads
+window.addEventListener('load', createStars);
+
+// Optional: Add mouse parallax effect to stars
+document.addEventListener('mousemove', (e) => {
+  const stars = document.querySelectorAll('.star');
+  const mouseX = e.clientX / window.innerWidth;
+  const mouseY = e.clientY / window.innerHeight;
+  
+  stars.forEach((star, index) => {
+    const speed = (index % 3 + 1) * 0.5;
+    const x = (mouseX - 0.5) * speed;
+    const y = (mouseY - 0.5) * speed;
+    star.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
