@@ -457,96 +457,34 @@ body.light-mode .education-card h3 {
   color: #1e293b;
 }
 
-/* Skills Subtitle */
-.skills-subtitle {
-  font-size: 1.5rem;
-  color: var(--accent-light);
-  margin: 3rem 0 1.5rem;
-  text-align: center;
-  font-weight: 600;
-}
-
-/* Language Skills */
-.language-skills {
+/* SKILLS */
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 2rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.language-item {
+.skill-item {
   background: var(--bg-card);
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  text-align: center;
+  font-weight: 500;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
-.language-item:hover {
-  transform: translateY(-5px);
+.skill-item:hover {
+  transform: translateY(-10px) scale(1.05);
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
 }
 
-.language-icon {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  color: white;
-}
-
-.language-content {
-  flex: 1;
-}
-
-.language-content h4 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-}
-
-.skill-level {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.level-bar {
-  width: 100%;
-  height: 10px;
-  background: var(--bg-secondary);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.level-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  border-radius: 10px;
-  transition: width 1s ease;
-}
-
-.level-text {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  text-align: right;
-}
-
-/* ===== SKILLS SUBTITLE & LANGUAGE/SOFT SKILLS ===== */
-.skills-subtitle {
-  font-size: 1.5rem;
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
   color: var(--accent-light);
-  margin: 3rem 0 1.5rem;
-  text-align: center;
-  font-weight: 600;
 }
 
 /* Language Skills */
@@ -659,7 +597,7 @@ body.light-mode .education-card h3 {
   line-height: 1.4;
 }
 
-/* Responsive untuk Language & Soft Skills */
+/* Responsive */
 @media (max-width: 640px) {
   .language-skills {
     grid-template-columns: 1fr;
@@ -679,7 +617,7 @@ body.light-mode .education-card h3 {
   }
 }
 
-/* Light mode adjustments */
+/* Light mode */
 body.light-mode .language-item {
   background: #e0e7ff;
 }
