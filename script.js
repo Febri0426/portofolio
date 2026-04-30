@@ -282,3 +282,21 @@ function goToImage(index) {
   slides[currentImageIndex].classList.add('active');
   dots[currentImageIndex].classList.add('active');
 }
+
+/* ===== MOUSE GLOW EFFECT FOR CARDS ===== */
+document.querySelectorAll('.skill-item, .project-card, .experience-card, .certificate-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--mouse-x', `${x}%`);
+    card.style.setProperty('--mouse-y', `${y}%`);
+  });
+});
+
+/* ===== SCROLL PROGRESS BAR ===== */
+window.addEventListener('scroll', () => {
+  const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (window.scrollY / windowHeight) * 100;
+  document.documentElement.style.setProperty('--scroll-progress', `${scrolled}%`);
+});

@@ -1452,3 +1452,284 @@ body.light-mode .project-modal .project-description p,
 body.light-mode .project-modal .project-responsibilities li {
   color: #334155;
 }
+
+/* ====== MODERN BACKGROUNDS ====== */
+
+/* 1. Animated Gradient Background untuk Hero */
+.hero {
+  background: linear-gradient(-45deg, #0f2b5a, #1d4ed8, #1e40af, #0f2b5a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. Floating Particles/Bubbles Background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(96, 165, 250, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3. Grid Pattern untuk Dark Sections */
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* 4. Dotted Pattern untuk Light Mode Sections */
+body.light-mode .section::before {
+  background-image: 
+    radial-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* 5. Animated Background Shapes */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -200px;
+  right: -200px;
+  animation: floatShape 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatShape {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-30px, -30px) rotate(120deg); }
+  66% { transform: translate(30px, 30px) rotate(240deg); }
+}
+
+/* 6. Glowing Orbs Animation */
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.1); }
+}
+
+.hero .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  animation: orbFloat 10s ease-in-out infinite;
+}
+
+.hero .orb-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(59, 130, 246, 0.3);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.hero .orb-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(96, 165, 250, 0.3);
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.hero .orb-3 {
+  width: 250px;
+  height: 250px;
+  background: rgba(30, 64, 175, 0.3);
+  top: 50%;
+  left: 50%;
+  animation-delay: 6s;
+}
+
+/* 7. Card Hover Glow Effect */
+.skill-item::before,
+.project-card::before,
+.experience-card::before,
+.certificate-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+    rgba(59, 130, 246, 0.15) 0%, 
+    transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.skill-item:hover::before,
+.project-card:hover::before,
+.experience-card:hover::before,
+.certificate-card:hover::before {
+  opacity: 1;
+}
+
+/* 8. Section Background Variations */
+#tentang {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+#pendidikan {
+  background: var(--bg-secondary);
+}
+
+#skills {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+#proyek {
+  background: var(--bg-primary);
+}
+
+#pengalaman {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+#sertifikat {
+  background: var(--bg-secondary);
+}
+
+.contact {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+/* 9. Light Mode Background Adjustments */
+body.light-mode #tentang {
+  background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
+}
+
+body.light-mode #pendidikan {
+  background: #ffffff;
+}
+
+body.light-mode #skills {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+}
+
+body.light-mode #proyek {
+  background: #f0f4f8;
+}
+
+body.light-mode #pengalaman {
+  background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
+}
+
+body.light-mode #sertifikat {
+  background: #ffffff;
+}
+
+body.light-mode .contact {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+}
+
+/* 10. Subtle Noise Texture (Optional - Uncomment to use) */
+/*
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+*/
+
+/* 11. Animated Border Gradient untuk Cards */
+.skill-item,
+.project-card,
+.experience-card,
+.certificate-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.skill-item::after,
+.project-card::after,
+.experience-card::after,
+.certificate-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.skill-item:hover::after,
+.project-card:hover::after,
+.experience-card:hover::after,
+.certificate-card:hover::after {
+  opacity: 1;
+}
+
+/* 12. Scroll Progress Indicator */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: var(--scroll-progress, 0%);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+  z-index: 10001;
+  transition: width 0.1s;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
