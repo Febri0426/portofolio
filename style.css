@@ -458,6 +458,15 @@ body.light-mode .education-card h3 {
 }
 
 /* SKILLS */
+.skills-subtitle {
+  font-size: 1.5rem;
+  color: var(--accent-light);
+  margin: 3rem 0 1.5rem;
+  text-align: center !important;
+  font-weight: 600;
+  width: 100%;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
