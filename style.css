@@ -1869,3 +1869,43 @@ body::before {
     display: block;
   }
 }
+
+/* ===== MODAL UNTUK SERTIFIKAT BERTUMPUK ===== */
+/* Letakkan DI LUAR media query agar bekerja di semua device */
+
+.modal {
+  overflow-y: auto;          /* Izinkan scroll vertikal */
+  padding-top: 60px;         /* Ruang agar tidak tertutup tombol close */
+}
+
+/* Sembunyikan gambar single lama agar tidak bentrok */
+#modal-img {
+  display: none;
+}
+
+/* Container untuk gambar bertumpuk */
+#modal-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem 2rem;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+#modal-gallery img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+}
+
+/* Tombol close tetap menempel di layar saat scroll */
+.close {
+  position: fixed !important;
+  top: 20px;
+  right: 30px;
+  z-index: 10001;
+}

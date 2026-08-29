@@ -50,9 +50,46 @@ function scrollToSection(id) {
   if (target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
 }
 
-function openModal(img) {
-  document.getElementById('modal').style.display = 'block';
-  document.getElementById('modal-img').src = img.src;
+// ✅ KODE BARU (GANTI DENGAN INI)
+function openModal(thumbnail) {
+  const modal = document.getElementById('modal');
+  const card = thumbnail.closest('.certificate-card');
+  let images = [];
+  
+  // Cek apakah sertifikat ini punya data-images (2 halaman)
+  if (card && card.dataset.images) {
+    try {
+      images = JSON.parse(card.dataset.images);
+    } catch(e) {
+      images = [thumbnail.src];
+    }
+  } else {
+    images = [thumbnail.src]; // Fallback untuk sertifikat 1 halaman
+  }
+
+  // Sembunyikan gambar single lama
+  document.getElementById('modal-img').style.display = 'none';
+  
+  // Buat/ambil container gallery
+  let gallery = document.getElementById('modal-gallery');
+  if (!gallery) {
+    gallery = document.createElement('div');
+    gallery.id = 'modal-gallery';
+    gallery.className = 'modal-gallery';
+    modal.appendChild(gallery);
+  }
+  
+  // Isi gallery dengan gambar
+  gallery.innerHTML = '';
+  images.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Certificate Page';
+    gallery.appendChild(img);
+  });
+
+  // Tampilkan modal
+  modal.style.display = 'block';
   document.body.style.overflow = 'hidden';
 }
 
